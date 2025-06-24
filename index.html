@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>生成AIパスポート試験対策単語帳</title>
+    <link rel="stylesheet" href="styles.css">    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>生成AIパスポート試験対策単語帳</h1>
+            <!-- <p>重要用語をマスターしよう</p> -->
+            <audio controls src="navi.mp3"></audio>
+        </div>
+        
+        <div class="progress">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+        
+        <div class="card" id="flashCard" onclick="flipCard()">
+            <div class="card-front">
+                <div class="chapter" id="chapterText"></div>
+                <div class="term" id="termText"></div>
+                <div class="hint">カードをクリックして説明を確認</div>
+            </div>
+            <div class="card-back">
+                <div class="definition" id="definitionText"></div>
+                <div class="card-link">
+                    <br>
+                    <iframe id="linkText" src="#" title="ref" class="card-link-frame"></iframe>
+                    <a id="linkTextA" href="#" target="_blank">別ウィンドウで開く</a>
+                </div>
+                <div class="hint">カードをクリックして単語に戻る</div>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <button class="btn btn-secondary" onclick="previousCard()">前の単語</button>
+            <div class="counter">
+                <span id="currentCard">1</span> / <span id="totalCards">0</span>
+            </div>
+            <button class="btn btn-primary" onclick="nextCard()">次の単語</button>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
